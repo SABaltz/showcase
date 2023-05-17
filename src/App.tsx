@@ -1,16 +1,9 @@
 import React from 'react';
-import {createTheme, ThemeProvider,} from "@mui/material";
+import {ThemeProvider,} from "@mui/material";
 import NavBar from "./components/NavBar";
 import Name from "./components/Name";
-
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-        primary: {
-            main: '#cb1818',
-        }
-    },
-})
+import {darkTheme} from "./components/Theme";
+import Quote from "./components/Quote";
 
 function App() {
     return (
@@ -19,7 +12,7 @@ function App() {
 
                 <NavBar></NavBar>
                 <Name></Name>
-
+                <Quote></Quote>
             </ThemeProvider>
         </>
     );
