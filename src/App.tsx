@@ -13,6 +13,7 @@ function App() {
                 <NavBar></NavBar>
                 <Name></Name>
                 <Quote></Quote>
+                
             </ThemeProvider>
         </>
     );

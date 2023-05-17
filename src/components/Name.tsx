@@ -18,7 +18,7 @@ export default function Name() {
                 alignContent: 'center'
             }}>
                 <Stack>
-                    <Typography variant={'h2'} sx={{marginBottom: '1rem'}}>
+                    <Typography variant={'h1'} sx={{marginBottom: '1rem'}}>
                         Samuel (Arthur) Baltz
                     </Typography>
                     <Typography variant={'h5'} sx={{
