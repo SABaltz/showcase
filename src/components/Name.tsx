@@ -5,7 +5,7 @@ export default function Name() {
     return (
         <>
             <CardMedia component="img" sx={{height: '50rem'}}
-                       image={require('../pexels-adrien-olichon-2387819.jpg')}/>
+                       image={require('../static/pexels-paul-voie-16771695.jpg')}/>
             <Box sx={{
                 scrollbarWidth: 0,
                 position: 'absolute',
@@ -18,13 +18,13 @@ export default function Name() {
                 alignContent: 'center'
             }}>
                 <Stack>
-                    <Typography variant={'h1'} sx={{marginBottom: '1rem'}}>
+                    <Typography variant={'h1'} sx={{marginBottom: '1rem', color: 'black'}}>
                         Samuel (Arthur) Baltz
                     </Typography>
                     <Typography variant={'h5'} sx={{
                         position: 'absolute',
                         width: '30rem',
-                        color: 'white',
+                        color: 'black',
                         top: '100%',
                         left: '50%',
                         transform: 'translateX(-50%)'

@@ -15,18 +15,18 @@ export default function Portrait() {
         }}>
             <Grid container>
                 <Grid item xs={6}>
-                    <Box
+                    <Typography
                         component="img"
                         sx={{
                             height: '40rem',
                             width: '30rem',
                         }}
                         alt="Portrait"
-                        src={require('../../src/static/IMG_3764.png')}
+                        src={require('../../src/static/IMG_3766.png')}
                     />
                 </Grid>
                 <Grid item xs={6}>
-                    <Typography>Born in Bash</Typography>
+
                 </Grid>
             </Grid>
 
