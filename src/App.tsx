@@ -2,7 +2,7 @@ import React from 'react';
 import {ThemeProvider,} from "@mui/material";
 import {darkTheme} from "./components/Theme";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import MotherBoard from "./components/MotherBoard";
+import NavBar from "./components/NavBar";
 
 function App() {
     return (
@@ -12,8 +12,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={
                             <>
-                                {/*<NavBar></NavBar>*/}
-                                <MotherBoard></MotherBoard>
+                                <NavBar></NavBar>
                             </>
                         }>
                         </Route>
