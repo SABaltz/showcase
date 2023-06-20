@@ -3,6 +3,7 @@ import {ThemeProvider,} from "@mui/material";
 import {darkTheme} from "./components/Theme";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import NavBar from "./components/NavBar";
+import HomePage from "./components/HomePage";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                         <Route path="/" element={
                             <>
                                 <NavBar></NavBar>
+                                <HomePage></HomePage>
                             </>
                         }>
                         </Route>
