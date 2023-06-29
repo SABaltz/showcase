@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Box, Button, Grid, keyframes, Typography} from "@mui/material";
+import './HomePage.css'
 
 let image = require('../static/background3.jpg')
 export default function HomePage() {
@@ -50,16 +51,17 @@ export default function HomePage() {
             <Typography
                 variant="h1"
                 sx={{
-                    marginTop: '14rem',
+                    marginTop: '12rem',
                     transform: 'rotate(-5deg)',
                     paddingLeft: '32rem',
+                    fontFamily: 'Circuit2',
                     backgroundImage: `linear-gradient(to right, #ee7337, #ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ffffff,#ee7337 ,#ee7337);`,
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
                 }}
             >
-                Samuel Baltz
+                samuel baltz
             </Typography>
         </Box>
     )
