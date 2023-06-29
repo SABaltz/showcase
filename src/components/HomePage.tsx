@@ -1,10 +1,22 @@
-import React from "react";
-import {Box, Button, Grid, Typography} from "@mui/material";
+import React, {useEffect, useState} from "react";
+import {Box, Button, Grid, keyframes, Typography} from "@mui/material";
 
 let image = require('../static/background3.jpg')
 export default function HomePage() {
-    let navOptions = ['About', 'Work', 'Code'].reverse()
 
+    const [animationPlayState, setAnimationPlayState] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => setAnimationPlayState((prevState) => !prevState), 1500)
+        return () => clearInterval(interval);
+    }, []);
+
+    let navOptions = ['About', 'Work', 'Code'].reverse()
+    let rainbowAnimation = keyframes`
+      to {
+        background-position: 4500vh;
+      }
+    `;
     return (
         <Box
             sx={{
@@ -18,9 +30,6 @@ export default function HomePage() {
 
             <Grid container sx={{paddingTop: '.5rem'}}>
                 <Grid item xs={9}>
-                    {/*<Typography variant="h5" component="div" sx={{flexGrow: 1, paddingLeft: '1rem', color: '#1849a8'}}>*/}
-                    {/*    Samuel Baltz*/}
-                    {/*</Typography>*/}
                 </Grid>
                 <Grid item xs={3}>
                     <Grid container direction="row-reverse">
@@ -38,12 +47,20 @@ export default function HomePage() {
                 </Grid>
             </Grid>
 
-            {/*<Typography variant={'h1'} sx={{textColor: 'linear-gradient(to right, #4880EC, #019CAD)'}}>Test</Typography>*/}
-            <Typography variant={'h1'} sx={{
-                backgroundImage: `-webkit-linear-gradient(0deg, #4880EC, #019CAD)`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent"
-            }}>Test</Typography>
+            <Typography
+                variant="h1"
+                sx={{
+                    marginTop: '14rem',
+                    transform: 'rotate(-5deg)',
+                    paddingLeft: '32rem',
+                    backgroundImage: `linear-gradient(to right, #dc9b23, #dc9b23,#dc9b23,#dc9b23,#dc9b23,#dc9b23,#dc9b23,#dc9b23,#ffffff,#dc9b23 ,#dc9b23);`,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
+                }}
+            >
+                Samuel Baltz
+            </Typography>
         </Box>
     )
 }
