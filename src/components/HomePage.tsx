@@ -37,7 +37,7 @@ export default function HomePage() {
                             return (
                                 <Grid item xs={4} key={index}>
                                     <Button>
-                                        <Typography variant="h6" component="div" sx={{flexGrow: 1, color: '#dc9b23'}}>
+                                        <Typography variant="h6" component="div" sx={{flexGrow: 1, color: '#ee7337'}}>
                                             {option}
                                         </Typography>
                                     </Button>
@@ -53,7 +53,7 @@ export default function HomePage() {
                     marginTop: '14rem',
                     transform: 'rotate(-5deg)',
                     paddingLeft: '32rem',
-                    backgroundImage: `linear-gradient(to right, #dc9b23, #dc9b23,#dc9b23,#dc9b23,#dc9b23,#dc9b23,#dc9b23,#dc9b23,#ffffff,#dc9b23 ,#dc9b23);`,
+                    backgroundImage: `linear-gradient(to right, #ee7337, #ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ffffff,#ee7337 ,#ee7337);`,
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
