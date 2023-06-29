@@ -61,6 +61,7 @@ export default function HomePage() {
                     animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
                 }}
             >
+                
                 samuel baltz
             </Typography>
         </Box>
