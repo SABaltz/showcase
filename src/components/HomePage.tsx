@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {Box, Button, Grid, keyframes, Typography} from "@mui/material";
+import {Box, Button, Grid, keyframes, Typography, useMediaQuery} from "@mui/material";
 import './HomePage.css'
+import {darkTheme} from "./Theme";
 
 let image = require('../static/background3.jpg')
 export default function HomePage() {
-
+    const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     const [animationPlayState, setAnimationPlayState] = useState(true);
 
     useEffect(() => {
@@ -51,9 +52,9 @@ export default function HomePage() {
             <Typography
                 variant="h1"
                 sx={{
-                    marginTop: '12rem',
+                    marginTop: smallScreen ? '12%' : '30%',
+                    marginLeft: smallScreen ? '30%' : '8%',
                     transform: 'rotate(-5deg)',
-                    paddingLeft: '32rem',
                     fontFamily: 'Circuit2',
                     backgroundImage: `linear-gradient(to right, #ee7337, #ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ee7337,#ffffff,#ee7337 ,#ee7337);`,
                     WebkitBackgroundClip: "text",
@@ -61,7 +62,7 @@ export default function HomePage() {
                     animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
                 }}
             >
-                samuel baltz
+                Samuel Baltz
             </Typography>
         </Box>
     )
