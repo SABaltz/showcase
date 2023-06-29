@@ -5,13 +5,6 @@ let image = require('../static/background3.jpg')
 export default function HomePage() {
     let navOptions = ['About', 'Work', 'Code'].reverse()
 
-    const waveAnimation = {
-        '@keyframes': {
-            '0%': {backgroundPosition: '0 50%'},
-            '100%': {backgroundPosition: '100% 50%'},
-        },
-    };
-
     return (
         <Box
             sx={{
