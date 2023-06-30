@@ -3,7 +3,7 @@ import {AppBar, Grid, Toolbar, Typography} from "@mui/material";
 
 export default function NavBar() {
 
-    let navOptions = ['About', 'Work', 'Code']
+    let navOptions = ['About', 'Work', 'Code.tsx']
 
     return (
         <AppBar position="static">
