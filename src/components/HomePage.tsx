@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Box, Button, Grid, keyframes, MenuItem, Typography, useMediaQuery} from "@mui/material";
+import {Box, Button, Grid, keyframes, Link, MenuItem, Typography, useMediaQuery} from "@mui/material";
 import './HomePage.css'
 import {darkTheme} from "./Theme";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -7,23 +7,10 @@ import Menu from '@mui/material/Menu';
 
 let image = require('../static/background3.jpg')
 export default function HomePage() {
-
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     const [animationPlayState, setAnimationPlayState] = useState(true);
-
-    useEffect(() => {
-        const interval = setInterval(() => setAnimationPlayState((prevState) => !prevState), 2000)
-        return () => clearInterval(interval);
-    }, []);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
 
     let navOptions = ['About', 'Work', 'Code'].reverse()
     let rainbowAnimation = keyframes`
@@ -31,6 +18,20 @@ export default function HomePage() {
         background-position: 4500vh;
       }
     `;
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => setAnimationPlayState((prevState) => !prevState), 2000)
+        return () => clearInterval(interval);
+    }, []);
+
+
     return (
         <Box
             sx={{
@@ -51,9 +52,12 @@ export default function HomePage() {
                                 return (
                                     <Grid item xs={4} key={index}>
                                         <Button>
-                                            <Typography variant="h6" component="div" sx={{flexGrow: 1, color: '#ee7337'}}>
-                                                {option}
-                                            </Typography>
+                                            <Link href={`/${option.toLowerCase()}`}>
+                                                <Typography variant="h6" component="div"
+                                                            sx={{flexGrow: 1, color: '#ee7337'}}>
+                                                    {option}
+                                                </Typography>
+                                            </Link>
                                         </Button>
                                     </Grid>)
                             })}
@@ -79,9 +83,17 @@ export default function HomePage() {
                             'aria-labelledby': 'basic-button',
                         }}
                     >
-                        <MenuItem onClick={handleClose}>About</MenuItem>
-                        <MenuItem onClick={handleClose}>Work</MenuItem>
-                        <MenuItem onClick={handleClose}>Code</MenuItem>
+                        {navOptions.map((option) => (
+                            <MenuItem onClick={handleClose}>
+                                <Link href={`/${option.toLowerCase()}`}>
+                                    <Typography variant="h6" component="div"
+                                                sx={{flexGrow: 1, color: '#ee7337'}}>
+                                        {option}
+                                    </Typography>
+                                </Link>
+                            </MenuItem>
+                        ))}
+
                     </Menu>
                 </>
             }
