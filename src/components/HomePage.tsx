@@ -33,87 +33,89 @@ export default function HomePage() {
 
 
     return (
-        <Box
-            sx={{
-                backgroundImage: 'url(' + image + ')',
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                width: '100vw',
-                height: '100vh'
-            }}>
-
-            {smallScreen ? <Grid container sx={{paddingTop: '.5rem'}}>
-                    <Grid item xs={9}>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Grid container direction="row-reverse">
-                            {navOptions.map((option, index) => {
-                                return (
-                                    <Grid item xs={4} key={index}>
-                                        <Button>
-                                            <Link href={`/${option.toLowerCase()}`}>
-                                                <Typography variant="h6" component="div"
-                                                            sx={{flexGrow: 1, color: '#ee7337'}}>
-                                                    {option}
-                                                </Typography>
-                                            </Link>
-                                        </Button>
-                                    </Grid>)
-                            })}
-                        </Grid>
-                    </Grid>
-                </Grid> :
-                <>
-                    <Button
-                        id="basic-button"
-                        aria-controls={open ? 'basic-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}
-                    >
-                        <MenuIcon></MenuIcon>
-                    </Button>
-                    <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
-                            'aria-labelledby': 'basic-button',
-                        }}
-                    >
-                        {navOptions.map((option) => (
-                            <MenuItem onClick={handleClose}>
-                                <Link href={`/${option.toLowerCase()}`}>
-                                    <Typography variant="h6" component="div"
-                                                sx={{flexGrow: 1, color: '#ee7337'}}>
-                                        {option}
-                                    </Typography>
-                                </Link>
-                            </MenuItem>
-                        ))}
-
-                    </Menu>
-                </>
-            }
-
-
-            <Typography
-                variant="h1"
+        <>
+            <Box
                 sx={{
-                    marginTop: smallScreen ? '12%' : '30%',
-                    marginLeft: smallScreen ? '30%' : '8%',
-                    transform: 'rotate(-5deg)',
-                    fontFamily: 'Circuit2',
-                    backgroundImage: `linear-gradient(to right, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ffffff ,#ee7337);`,
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
-                }}
-            >
-                Samuel Baltz
-            </Typography>
-        </Box>
+                    backgroundImage: 'url(' + image + ')',
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    width: '100vw',
+                    height: '100vh'
+                }}>
+
+                {smallScreen ? <Grid container sx={{paddingTop: '.5rem'}}>
+                        <Grid item xs={9}>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Grid container direction="row-reverse">
+                                {navOptions.map((option, index) => {
+                                    return (
+                                        <Grid item xs={4} key={index}>
+                                            <Button>
+                                                <Link href={`/${option.toLowerCase()}`}>
+                                                    <Typography variant="h6" component="div"
+                                                                sx={{flexGrow: 1, color: '#ee7337'}}>
+                                                        {option}
+                                                    </Typography>
+                                                </Link>
+                                            </Button>
+                                        </Grid>)
+                                })}
+                            </Grid>
+                        </Grid>
+                    </Grid> :
+                    <>
+                        <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                        >
+                            <MenuIcon></MenuIcon>
+                        </Button>
+                        <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                            }}
+                        >
+                            {navOptions.map((option) => (
+                                <MenuItem onClick={handleClose}>
+                                    <Link href={`/${option.toLowerCase()}`}>
+                                        <Typography variant="h6" component="div"
+                                                    sx={{flexGrow: 1, color: '#ee7337'}}>
+                                            {option}
+                                        </Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+
+                        </Menu>
+                    </>
+                }
+
+
+                <Typography
+                    variant="h1"
+                    sx={{
+                        marginTop: smallScreen ? '12%' : '30%',
+                        marginLeft: smallScreen ? '30%' : '8%',
+                        transform: 'rotate(-5deg)',
+                        fontFamily: 'Circuit2',
+                        backgroundImage: `linear-gradient(to right, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ffffff ,#ee7337);`,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
+                    }}
+                >
+                    Samuel Baltz
+                </Typography>
+            </Box>
+        </>
     )
 }

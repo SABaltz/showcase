@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./components/HomePage";
 import About from './components/About';
 import Code from "./components/Code";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                         {/*<Route path="/about" element={<><About/></>}></Route>*/}
                     </Routes>
                 </BrowserRouter>
+                <Footer/>
             </ThemeProvider>
         </>
     );
