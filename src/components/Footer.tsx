@@ -1,10 +1,10 @@
 import React from "react";
 import {AppBar, Grid, Link, Toolbar, Typography} from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import {FaGithub, FaNpm} from 'react-icons/fa';
 
 export default function Footer() {
 
-    let navOptions = ['Home', 'About', 'Work', 'Code']
+    let navOptions = ['Home', 'About', 'Work', 'Code', 'Contact']
 
     return (
         <AppBar position="static">
@@ -20,8 +20,12 @@ export default function Footer() {
                         </Grid>
                     ))}
                     <Grid item xs={3}>
-                        <GitHubIcon href={'https://github.com/SABaltz'}/>
+                        <FaGithub></FaGithub>
                     </Grid>
+                    <Grid item xs={3}>
+                        <FaNpm/>
+                    </Grid>
+
                 </Grid>
             </Toolbar>
         </AppBar>
