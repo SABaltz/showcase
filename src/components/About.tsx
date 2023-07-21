@@ -38,41 +38,40 @@ export default function About() {
 const itemData = [
     {
         img: require('../static/arches.JPG'),
-        title: 'Breakfast',
+        title: 'Arches National Park ',
         rows: 2,
         cols: 2,
     },
     {
         img: require('../static/cave.JPG'),
-        title: 'Burger',
+        title: 'Columbia Mountain Cavv=e',
     },
     {
         img: require('../static/fisher.JPG'),
-        title: 'Camera',
+        title: 'Fisher Towers',
     },
     {
         img: require('../static/glacier.jpg'),
-        title: 'Coffee',
+        title: 'Glacier National Park',
         cols: 2,
     },
     {
         img: require('../static/kayak.jpg'),
-        title: 'Hats',
+        title: 'Sea Kayaking',
         cols: 2,
     },
     {
         img: require('../static/ousel.jpg'),
-        title: 'Honey',
-        author: '@arwinneil',
+        title: 'Ousel Peak',
         rows: 2,
         cols: 2,
     },
     {
         img: require('../static/vets.jpg'),
-        title: 'Basketball',
+        title: 'Sam in Hat',
     },
     {
         img: require('../static/yellowstone.JPG'),
-        title: 'Fern',
+        title: 'Yellow Stone National Park',
     }
 ];
