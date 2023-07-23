@@ -13,10 +13,9 @@ function App() {
             <ThemeProvider theme={darkTheme}>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<><HomePage></HomePage></>}></Route>
+                        <Route path="/" element={<><HomePage/></>}></Route>
                         <Route path="/about" element={<><About/></>}></Route>
                         <Route path="/code" element={<><Code/></>}></Route>
-                        {/*<Route path="/about" element={<><About/></>}></Route>*/}
                     </Routes>
                 </BrowserRouter>
                 <Footer/>
