@@ -20,10 +20,14 @@ export default function Footer() {
                         </Grid>
                     ))}
                     <Grid item xs={3}>
-                        <FaGithub></FaGithub>
+                        <Link href={`https://github.com/SABaltz`}>
+                            <FaGithub/>
+                        </Link>
                     </Grid>
                     <Grid item xs={3}>
-                        <FaNpm/>
+                        <Link href={`https://www.npmjs.com/~sabaltz`}>
+                            <FaNpm/>
+                        </Link>
                     </Grid>
 
                 </Grid>
