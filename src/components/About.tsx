@@ -1,16 +1,82 @@
 import React from 'react'
-import {Grid, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
+import {Box, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     return (
         <>
+            <Typography sx={{margin: '2rem 2rem', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+                        variant={'h1'}>About
+                Me</Typography>
+
             <Grid container>
-                <Grid item xs={6} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Test</Grid>
-                <Grid item xs={6} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Test</Grid>
+
+                <Grid item xs={7} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Box
+                        sx={{
+                            borderRadius: '5rem',
+                            backgroundImage: 'url(' + require('../static/ManyGlacier.jpg') + ')',
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover',
+                            width: '30vw',
+                            height: '50vh'
+                        }}/>
+                </Grid>
+
+                <Grid item xs={5} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Typography variant={'h6'}>Born and raised in Montana outside of Glacier National Park I spent my
+                        youth exploring
+                        the vast wilderness areas around my home.</Typography>
+                </Grid>
+
+
+                <Grid item xs={5} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Typography variant={'h6'}>I attended <Link href={'https://www.conncoll.edu/'}>Connecticut
+                        College</Link> in New London, CT and
+                        graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a member of
+                        the <Link href={'https://camelathletics.com/sports/mens-rowing'}>Varsity Rowing</Link> team for
+                        four years, and served my final year as
+                        captain.</Typography>
+                </Grid>
+
+                <Grid item xs={7} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Box
+                        sx={{
+                            borderRadius: '5rem',
+                            backgroundImage: 'url(' + require('../static/Rowing.jpg') + ')',
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover',
+                            width: '30vw',
+                            height: '50vh'
+                        }}/>
+                </Grid>
+
+                <Grid item xs={7} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Box
+                        sx={{
+                            borderRadius: '5rem',
+                            backgroundImage: 'url(' + require('../static/montana.jpg') + ')',
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover',
+                            width: '30vw',
+                            height: '40vh'
+                        }}/>
+                </Grid>
+
+                <Grid item xs={5} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Typography variant={'h6'}>These Days you can find me kayaking, climbing, and skiing in Anchorage,
+                        Alaska, where I currently reside.</Typography>
+                </Grid>
+
+
             </Grid>
-            <ImageList sx={{width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1} rowHeight={1000}>
+
+            <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
+                       rowHeight={1000}>
                 {itemData.map((item) => (
                     <ImageListItem key={item.img}>
                         <img
