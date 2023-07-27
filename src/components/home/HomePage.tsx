@@ -107,10 +107,10 @@ export default function HomePage() {
                         marginLeft: smallScreen ? '30%' : '8%',
                         transform: 'rotate(-5deg)',
                         fontFamily: 'Circuit2',
-                        backgroundImage: `linear-gradient(to right, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ee7337, #ffffff ,#ee7337);`,
+                        backgroundImage: `linear-gradient(to right, #ee7337 99%, #ffffff 1%);`,
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
-                        animation: `${animationPlayState ? rainbowAnimation : ''} 35s linear infinite`
+                        animation: `${animationPlayState ? rainbowAnimation : ''} ${smallScreen ? '35ms' : '50ms'} linear infinite`
                     }}
                 >
                     Samuel Baltz
