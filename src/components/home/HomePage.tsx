@@ -110,7 +110,7 @@ export default function HomePage() {
                         backgroundImage: `linear-gradient(to right, #ee7337 99%, #ffffff 1%);`,
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
-                        animation: `${animationPlayState ? rainbowAnimation : ''} ${smallScreen ? '35ms' : '50ms'} linear infinite`
+                        animation: `${animationPlayState ? rainbowAnimation : ''} ${smallScreen ? '120s' : '140s'} linear infinite`
                     }}
                 >
                     Samuel Baltz
