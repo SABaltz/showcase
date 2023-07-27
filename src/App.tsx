@@ -2,7 +2,7 @@ import React from 'react';
 import {ThemeProvider,} from "@mui/material";
 import {darkTheme} from "./components/Theme";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from "./components/HomePage";
+import HomePage from "./components/home/HomePage";
 import About from './components/About';
 import Code from "./components/Code";
 import Footer from "./components/Footer";

@@ -29,7 +29,6 @@ export default function Footer() {
                             <FaNpm/>
                         </Link>
                     </Grid>
-
                 </Grid>
             </Toolbar>
         </AppBar>

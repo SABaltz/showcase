@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {Box, Button, Grid, keyframes, Link, MenuItem, Typography, useMediaQuery} from "@mui/material";
 import './HomePage.css'
-import {darkTheme} from "./Theme";
+import {darkTheme} from "../Theme";
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 
-let image = require('../static/background3.jpg')
+let image = require('../../static/background3.jpg')
 export default function HomePage() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     const [animationPlayState, setAnimationPlayState] = useState(true);
