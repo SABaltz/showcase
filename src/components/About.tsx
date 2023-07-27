@@ -1,30 +1,15 @@
 import React from 'react'
 import {ImageList, ImageListItem} from "@mui/material";
 
-
-function srcset(image: string, size: number, rows = 4, cols = 4) {
-    return {
-        src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-        srcSet: `${image}?w=${size * cols}&h=${
-            size * rows
-        }&fit=crop&auto=format&dpr=2 2x`,
-    };
-}
-
-
 export default function About() {
 
     return (
-        <ImageList
-            sx={{width: '50vw', height: 500}}
-            variant="quilted"
-            cols={4}
-            rowHeight={121}
-        >
+        <ImageList sx={{width: '100vw', height: '100vh'}} cols={3} rowHeight={1000}>
             {itemData.map((item) => (
-                <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                <ImageListItem key={item.img}>
                     <img
-                        {...srcset(item.img, 121, item.rows, item.cols)}
+                        src={`${item.img}?w=1000&h=1000&fit=crop&auto=format`}
+                        srcSet={`${item.img}?w=1000&h=1000&fit=crop&auto=format&dpr=2 2x`}
                         alt={item.title}
                         loading="lazy"
                     />
