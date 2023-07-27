@@ -11,7 +11,7 @@ export default function Footer() {
             <Toolbar>
                 <Grid container>
                     {navOptions.map((option) => (
-                        <Grid item xs={4} md={1}>
+                        <Grid item xs={4} md={2}>
                             <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                                 <Link href={option === 'Home' ? '/' : `/${option.toLowerCase()}`} sx={{color: 'white'}}>
                                     {option}
@@ -19,12 +19,12 @@ export default function Footer() {
                             </Typography>
                         </Grid>
                     ))}
-                    <Grid item xs={2} md={3}>
+                    <Grid item xs={2} md={1}>
                         <Link color={'inherit'} href={`https://github.com/SABaltz`}>
                             <FaGithub/>
                         </Link>
                     </Grid>
-                    <Grid item xs={2} md={3}>
+                    <Grid item xs={2} md={1}>
                         <Link color={'inherit'} href={`https://www.npmjs.com/~sabaltz`}>
                             <FaNpm/>
                         </Link>

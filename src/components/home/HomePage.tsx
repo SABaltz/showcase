@@ -73,7 +73,7 @@ export default function HomePage() {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                         >
-                            <MenuIcon></MenuIcon>
+                            <MenuIcon sx={{color: '#ee7337'}}></MenuIcon>
                         </Button>
                         <Menu
                             id="basic-menu"
