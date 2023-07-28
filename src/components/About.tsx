@@ -4,10 +4,10 @@ import {darkTheme} from "./Theme";
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
 
-let ImageTile = ({imageLocation}) => {
+let ImageTile = ({imageLocation, smallScreen}) => {
     return (
         <>
-            <Grid item xs={6} md={4}
+            <Grid item xs={12} md={4}
                   sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '3rem'}}>
                 <Box
                     sx={{
@@ -16,8 +16,8 @@ let ImageTile = ({imageLocation}) => {
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: 'center',
                         backgroundSize: 'cover',
-                        width: '30vw',
-                        height: '50vh'
+                        width: smallScreen ? '30vw' : '100vw',
+                        height: smallScreen ? '50vh' : '50vh'
                     }}/>
             </Grid>
         </>
@@ -52,7 +52,7 @@ export default function About() {
 
                 <Grid container>
 
-                    <Grid item xs={6} md={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
+                    <Grid item xs={12} md={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
                         <Typography variant={'h6'}>Born and raised in Montana outside of Glacier National Park I
                             spent
                             my
@@ -60,13 +60,15 @@ export default function About() {
                             the vast wilderness areas around my home.</Typography>
                     </Grid>
 
-                    <ImageTile imageLocation={require('../static/HungryHorse.jpg')}/>
-                    {smallScreen ? <ImageTile imageLocation={require('../static/ManyGlacier.jpg')}/> : <></>}
+                    <ImageTile smallScreen={smallScreen} imageLocation={require('../static/HungryHorse.jpg')}/>
+                    {smallScreen ? <ImageTile smallScreen={smallScreen}
+                                              imageLocation={require('../static/ManyGlacier.jpg')}/> : <></>}
 
 
-                    <ImageTile imageLocation={require('../static/Rowing.jpg')}/>
+                    {smallScreen ?
+                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
 
-                    <Grid item xs={6} md={4} sx={{...centerGrid}}>
+                    <Grid item xs={12} md={4} sx={{...centerGrid}}>
                         <Typography variant={'h6'}>I attended <Link href={'https://www.conncoll.edu/'}>Connecticut
                             College</Link> in New London, CT and
                             graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a
@@ -78,17 +80,25 @@ export default function About() {
                             four years, and served my final year as
                             captain.</Typography>
                     </Grid>
-                    {smallScreen ? <ImageTile imageLocation={require('../static/Rowing2.jpg')}/> : <></>}
+
+                    {!smallScreen ?
+                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
+
+                    {smallScreen ?
+                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing2.jpg')}/> : <></>}
 
 
-                    {smallScreen ? <ImageTile imageLocation={require('../static/AK1.JPG')}/> : <></>}
-                    {smallScreen ? <ImageTile imageLocation={require('../static/AK2.jpg')}/> : <></>}
-                    <Grid item xs={6} md={4} sx={{...centerGrid, paddingRight: '1rem'}}>
+                    {smallScreen ?
+                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/AK1.JPG')}/> : <></>}
+                    {smallScreen ?
+                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/AK2.jpg')}/> : <></>}
+                    <Grid item xs={12} md={4} sx={{...centerGrid, paddingRight: '1rem'}}>
                         <Typography variant={'h6'}>These Days you can find me kayaking, climbing, and skiing in
                             Anchorage,
                             Alaska, where I currently reside.</Typography>
                     </Grid>
-                    {!smallScreen ? <ImageTile imageLocation={require('../static/AK1.JPG')}/> : <></>}
+                    {!smallScreen ?
+                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/AK1.JPG')}/> : <></>}
 
                 </Grid>
 
