@@ -11,4 +11,5 @@ export const darkTheme = createTheme({
         }
 
     },
+    typography: {fontFamily: 'poppins'},
 })
