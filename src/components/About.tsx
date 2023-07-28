@@ -11,7 +11,7 @@ let ImageTile = ({imageLocation}) => {
                   sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '3rem'}}>
                 <Box
                     sx={{
-                        // borderRadius: '5rem',
+                        borderRadius: '2rem',
                         backgroundImage: 'url(' + imageLocation + ')',
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: 'center',
