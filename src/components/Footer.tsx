@@ -1,16 +1,15 @@
 import React from "react";
 import {AppBar, Grid, Link, Toolbar, Typography} from "@mui/material";
 import {FaGithub, FaNpm} from 'react-icons/fa';
+import {navOptions} from "./home/HomePage";
 
 export default function Footer() {
-
-    let navOptions = ['Home', 'About', 'Work', 'Code', 'Contact']
-
+    let navOptionsFooter = ['Contact', ...navOptions].reverse()
     return (
         <AppBar position="static">
             <Toolbar>
                 <Grid container>
-                    {navOptions.map((option) => (
+                    {navOptionsFooter.map((option) => (
                         <Grid item xs={4} md={2}>
                             <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                                 <Link href={option === 'Home' ? '/' : `/${option.toLowerCase()}`} sx={{color: 'white'}}>

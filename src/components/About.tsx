@@ -39,7 +39,7 @@ export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
 
-    let linearStart = '#1f4037'
+    let linearStart = '#ADA996'
     return (
         <>
             {/*--------------------------Nav---------------------------------*/}
@@ -55,7 +55,7 @@ export default function About() {
 
             {/*--------------------------Backgrouund---------------------------------*/}
             <Box sx={{
-                background: `linear-gradient(to bottom, ${linearStart}, #99f2c8 );`,
+                background: `linear-gradient(to bottom, ${linearStart}, #F2F2F2, #DBDBDB, #EAEAEA );`,
             }}>
                 <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>About</Typography></Divider>
 

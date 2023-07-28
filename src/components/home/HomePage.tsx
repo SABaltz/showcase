@@ -7,7 +7,7 @@ import NavButton from "../nav/NavButton";
 
 let image = require('../../static/background3.jpg')
 
-export const navOptions = ['Home', 'About', 'Work', 'Code',].reverse()
+export const navOptions = ['Home', 'About', 'Code',].reverse()
 
 export default function HomePage() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
