@@ -4,6 +4,27 @@ import {darkTheme} from "./Theme";
 import NavButton from "./NavButton";
 import NavBar from "./NavBar";
 
+let ImageTile = ({imageLocation}) => {
+    return (
+        <>
+            <Grid item xs={4}
+                  sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '3rem'}}>
+                <Box
+                    sx={{
+                        borderRadius: '5rem',
+                        backgroundImage: 'url(' + imageLocation + ')',
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        width: '30vw',
+                        height: '50vh'
+                    }}/>
+            </Grid>
+        </>
+    )
+}
+
+export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 'center'}
 
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
@@ -13,7 +34,8 @@ export default function About() {
                 <Box sx={{backgroundColor: '#1f4037'}}>
                     <NavBar textColor={'black'}/>
                 </Box>
-                : <NavButton/>}
+                : <NavButton/>
+            }
 
             <Box sx={{
                 background: `linear-gradient(to bottom, #1f4037, #99f2c8 );`,
@@ -27,7 +49,7 @@ export default function About() {
                 <Grid container>
 
                     <Fragment>
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Grid item xs={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
                             <Typography variant={'h6'}>Born and raised in Montana outside of Glacier National Park I
                                 spent
                                 my
@@ -35,53 +57,20 @@ export default function About() {
                                 the vast wilderness areas around my home.</Typography>
                         </Grid>
 
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/HungryHorse.jpg') + ')',
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    width: '30vw',
-                                    height: '50vh'
-                                }}/>
-                        </Grid>
-
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/ManyGlacier.jpg') + ')',
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    width: '30vw',
-                                    height: '50vh'
-                                }}/>
-                        </Grid>
-
+                        <ImageTile imageLocation={require('../static/HungryHorse.jpg')}/>
+                        <ImageTile imageLocation={require('../static/ManyGlacier.jpg')}/>
 
                     </Fragment>
 
                     <Fragment>
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/Rowing.jpg') + ')',
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    width: '30vw',
-                                    height: '50vh'
-                                }}/>
-                        </Grid>
 
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <ImageTile imageLocation={require('../static/Rowing.jpg')}/>
+
+                        <Grid item xs={4} sx={{...centerGrid}}>
                             <Typography variant={'h6'}>I attended <Link href={'https://www.conncoll.edu/'}>Connecticut
                                 College</Link> in New London, CT and
-                                graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a member
+                                graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a
+                                member
                                 of
                                 the <Link href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
                                     Rowing</Link> team
@@ -89,49 +78,16 @@ export default function About() {
                                 four years, and served my final year as
                                 captain.</Typography>
                         </Grid>
+                        <ImageTile imageLocation={require('../static/Rowing2.jpg')}/>
 
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/Rowing2.jpg') + ')',
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    width: '30vw',
-                                    height: '50vh'
-                                }}/>
-                        </Grid>
                     </Fragment>
 
                     <Fragment>
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/montana.jpg') + ')',
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    width: '30vw',
-                                    height: '40vh'
-                                }}/>
-                        </Grid>
 
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Box
-                                sx={{
-                                    borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/montana.jpg') + ')',
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    width: '30vw',
-                                    height: '40vh'
-                                }}/>
-                        </Grid>
+                        <ImageTile imageLocation={require('../static/AK1.JPG')}/>
+                        <ImageTile imageLocation={require('../static/AK2.jpg')}/>
 
-                        <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Grid item xs={4} sx={{...centerGrid, paddingRight: '1rem'}}>
                             <Typography variant={'h6'}>These Days you can find me kayaking, climbing, and skiing in
                                 Anchorage,
                                 Alaska, where I currently reside.</Typography>
@@ -140,8 +96,9 @@ export default function About() {
                     </Fragment>
                 </Grid>
 
-                <Typography sx={{margin: '2rem 2rem', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
-                            variant={'h1'}>My Travels</Typography>
+                <Typography
+                    sx={{margin: '2rem 2rem', ...centerGrid}}
+                    variant={'h1'}>My Travels</Typography>
 
 
                 <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
