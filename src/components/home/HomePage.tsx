@@ -41,7 +41,7 @@ export default function HomePage() {
 
                 {smallScreen ?
                     <NavBar textColor={'#ee7337'}/> :
-                    <NavButton/>
+                    <NavButton buttonColor={'#ee7337'}/>
                 }
 
 

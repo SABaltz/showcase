@@ -39,23 +39,23 @@ export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
 
-    let linearStart = '#ADA996'
+    let linearStart = '#232526'
     return (
         <>
             {/*--------------------------Nav---------------------------------*/}
             {smallScreen ?
                 <Box sx={{backgroundColor: linearStart}}>
-                    <NavBar textColor={'black'}/>
+                    <NavBar textColor={'#dcdcdc'}/>
                 </Box>
                 :
                 <Box sx={{backgroundColor: linearStart}}>
-                    <NavButton/>
+                    <NavButton buttonColor={'#dcdcdc'}/>
                 </Box>
             }
 
             {/*--------------------------Backgrouund---------------------------------*/}
             <Box sx={{
-                background: `linear-gradient(to bottom, ${linearStart}, #F2F2F2, #DBDBDB, #EAEAEA );`,
+                background: `linear-gradient(to bottom, ${linearStart}, #414345 );`,
             }}>
                 <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>About</Typography></Divider>
 

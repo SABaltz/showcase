@@ -1,5 +1,7 @@
 import {createTheme} from "@mui/material";
 
+let textColor = '#dcdcdc'
+
 export const darkTheme = createTheme({
     palette: {
         mode: 'dark',
@@ -11,5 +13,5 @@ export const darkTheme = createTheme({
         }
 
     },
-    typography: {fontFamily: 'poppins'},
+    typography: {fontFamily: 'poppins', h1: {color: textColor}, h2: {color: textColor}, h6: {color: textColor}},
 })
