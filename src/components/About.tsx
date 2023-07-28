@@ -39,7 +39,7 @@ export default function About() {
                             <Box
                                 sx={{
                                     borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/ManyGlacier.jpg') + ')',
+                                    backgroundImage: 'url(' + require('../static/HungryHorse.jpg') + ')',
                                     backgroundRepeat: "no-repeat",
                                     backgroundPosition: 'center',
                                     backgroundSize: 'cover',
@@ -94,7 +94,7 @@ export default function About() {
                             <Box
                                 sx={{
                                     borderRadius: '5rem',
-                                    backgroundImage: 'url(' + require('../static/Rowing.jpg') + ')',
+                                    backgroundImage: 'url(' + require('../static/Rowing2.jpg') + ')',
                                     backgroundRepeat: "no-repeat",
                                     backgroundPosition: 'center',
                                     backgroundSize: 'cover',
@@ -164,14 +164,8 @@ export default function About() {
 
 
 const itemData = [
-    {
-        img: require('../static/arches.JPG'),
-        title: 'Arches National Park ',
-    },
-    {
-        img: require('../static/cave.JPG'),
-        title: 'Columbia Mountain Cave',
-    },
+
+
     {
         img: require('../static/glacier.jpg'),
         title: 'Glacier National Park',
@@ -187,5 +181,27 @@ const itemData = [
     {
         img: require('../static/yellowstone.JPG'),
         title: 'Yellow Stone National Park',
-    }
+    },
+
+    {
+        img: require('../static/FisherHike.JPG'),
+        title: 'Fisher Towers',
+    },
+    {
+        img: require('../static/FisherTowers.jpg'),
+        title: 'Fisher Towers',
+    },
+
+    {
+        img: require('../static/arches.JPG'),
+        title: 'Arches National Park ',
+    },
+    {
+        img: require('../static/Docks.jpg'),
+        title: 'Rowing Docks',
+    },
+    {
+        img: require('../static/cave.JPG'),
+        title: 'Columbia Mountain Cave',
+    },
 ];
