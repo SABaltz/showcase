@@ -98,7 +98,7 @@ export default function About() {
 
 
                 <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
-                           rowHeight={1000}>
+                           rowHeight={670}>
                     {itemData.map((item) => (
                         <ImageListItem key={item.img}>
                             <img
