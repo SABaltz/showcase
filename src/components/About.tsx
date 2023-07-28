@@ -76,12 +76,13 @@ export default function About() {
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
 
                     <Grid item xs={12} md={4} sx={{...centerGrid}}>
-                        <Typography variant={'h6'}>I attended <Link href={'https://www.conncoll.edu/'}>Connecticut
+                        <Typography variant={'h6'}>I attended <Link sx={{color: '#919191'}}
+                                                                    href={'https://www.conncoll.edu/'}>Connecticut
                             College</Link> in New London, CT and
                             graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a
                             member
                             of
-                            the <Link href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
+                            the <Link sx={{color: '#919191'}} href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
                                 Rowing</Link> team
                             for
                             four years, and served my final year as
