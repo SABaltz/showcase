@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
+import {Box, Divider, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
@@ -24,6 +24,16 @@ let ImageTile = ({imageLocation, smallScreen}) => {
     )
 }
 
+let TextTile = ({text}) => {
+    return (
+        <>
+            <Grid item xs={12} md={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
+                <Typography variant={'h6'}>{text}</Typography>
+            </Grid>
+        </>
+    )
+}
+
 export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 'center'}
 
 export default function About() {
@@ -32,6 +42,7 @@ export default function About() {
     let linearStart = '#1f4037'
     return (
         <>
+            {/*--------------------------Nav---------------------------------*/}
             {smallScreen ?
                 <Box sx={{backgroundColor: linearStart}}>
                     <NavBar textColor={'black'}/>
@@ -42,28 +53,24 @@ export default function About() {
                 </Box>
             }
 
+            {/*--------------------------Backgrouund---------------------------------*/}
             <Box sx={{
                 background: `linear-gradient(to bottom, ${linearStart}, #99f2c8 );`,
             }}>
-
-                <Typography
-                    sx={{padding: '2rem 2rem', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
-                    variant={'h1'}>About</Typography>
+                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>About</Typography></Divider>
 
                 <Grid container>
 
-                    <Grid item xs={12} md={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
-                        <Typography variant={'h6'}>Born and raised in Montana outside of Glacier National Park I
-                            spent
-                            my
-                            youth exploring
-                            the vast wilderness areas around my home.</Typography>
-                    </Grid>
+
+                    {/*--------------------------Row 1---------------------------------*/}
+                    <TextTile
+                        text={'Born and raised in Montana outside of Glacier National Park I spent my youth exploring the vast wilderness areas around my home.'}/>
 
                     <ImageTile smallScreen={smallScreen} imageLocation={require('../static/HungryHorse.jpg')}/>
                     {smallScreen ? <ImageTile smallScreen={smallScreen}
                                               imageLocation={require('../static/ManyGlacier.jpg')}/> : <></>}
 
+                    {/*--------------------------Row 2---------------------------------*/}
 
                     {smallScreen ?
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
@@ -81,31 +88,30 @@ export default function About() {
                             captain.</Typography>
                     </Grid>
 
+
                     {!smallScreen ?
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
 
                     {smallScreen ?
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing2.jpg')}/> : <></>}
 
-
+                    {/*--------------------------Row 3---------------------------------*/}
                     {smallScreen ?
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/AK1.JPG')}/> : <></>}
                     {smallScreen ?
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/AK2.jpg')}/> : <></>}
-                    <Grid item xs={12} md={4} sx={{...centerGrid, paddingRight: '1rem'}}>
-                        <Typography variant={'h6'}>These Days you can find me kayaking, climbing, and skiing in
-                            Anchorage,
-                            Alaska, where I currently reside.</Typography>
-                    </Grid>
+                    <TextTile
+                        text={'These Days you can find me kayaking, climbing, and skiing in Anchorage, Alaska, where I currently reside.'}/>
                     {!smallScreen ?
                         <ImageTile smallScreen={smallScreen} imageLocation={require('../static/AK1.JPG')}/> : <></>}
 
                 </Grid>
 
-                <Typography
-                    sx={{margin: '2rem 2rem', ...centerGrid}}
-                    variant={'h1'}>Travels</Typography>
 
+                {/*--------------------------Travels---------------------------------*/}
+
+
+                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Travels</Typography></Divider>
 
                 <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
                            rowHeight={900}>
@@ -143,7 +149,6 @@ const itemData = [
         img: require('../static/yellowstone.JPG'),
         title: 'Yellow Stone National Park',
     },
-
     {
         img: require('../static/FisherHike.JPG'),
         title: 'Fisher Towers',
