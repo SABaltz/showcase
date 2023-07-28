@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {Box, Button, Grid, keyframes, Link, MenuItem, Typography, useMediaQuery} from "@mui/material";
+import {Box, Button, Grid, keyframes, Link, Typography, useMediaQuery} from "@mui/material";
 import './HomePage.css'
 import {darkTheme} from "../Theme";
-import MenuIcon from '@mui/icons-material/Menu';
-import Menu from '@mui/material/Menu';
+import NavButton from "../NavButton";
 
 let image = require('../../static/background3.jpg')
 export default function HomePage() {
@@ -44,7 +43,8 @@ export default function HomePage() {
                     height: '100vh'
                 }}>
 
-                {smallScreen ? <Grid container sx={{paddingTop: '.5rem'}}>
+                {smallScreen ?
+                    <Grid container sx={{paddingTop: '.5rem'}}>
                         <Grid item xs={9}>
                         </Grid>
                         <Grid item xs={3}>
@@ -65,38 +65,7 @@ export default function HomePage() {
                             </Grid>
                         </Grid>
                     </Grid> :
-                    <>
-                        <Button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
-                        >
-                            <MenuIcon sx={{color: '#ee7337'}}></MenuIcon>
-                        </Button>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            {navOptions.map((option) => (
-                                <MenuItem onClick={handleClose}>
-                                    <Link href={`/${option.toLowerCase()}`}>
-                                        <Typography variant="h6" component="div"
-                                                    sx={{flexGrow: 1, color: '#ee7337'}}>
-                                            {option}
-                                        </Typography>
-                                    </Link>
-                                </MenuItem>
-                            ))}
-
-                        </Menu>
-                    </>
+                    <NavButton/>
                 }
 
 

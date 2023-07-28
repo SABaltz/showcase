@@ -2,6 +2,7 @@ import React, {Fragment} from 'react'
 import {Box, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 
+
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     return (
@@ -20,7 +21,7 @@ export default function About() {
                             youth exploring
                             the vast wilderness areas around my home.</Typography>
                     </Grid>
-                    
+
                     <Grid item xs={4} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Box
                             sx={{
@@ -123,6 +124,10 @@ export default function About() {
 
                 </Fragment>
             </Grid>
+
+            <Typography sx={{margin: '2rem 2rem', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+                        variant={'h1'}>My Travels</Typography>
+
 
             <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
                        rowHeight={1000}>
