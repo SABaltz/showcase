@@ -7,48 +7,72 @@ import {FaAngular, FaCss3, FaHtml5, FaLinux, FaNode, FaNpm, FaPython, FaReact, F
 import {FaR} from "react-icons/fa6";
 import JavascriptIcon from '@mui/icons-material/Javascript';
 
+
+let textColor = '#dcdcdc'
+
+let DividerTitle = ({text}) => {
+    return (
+        <Divider><Typography variant={'h1'}>{text}</Typography></Divider>
+    )
+}
+
+let TechName = ({text, icon}) => {
+    return (
+        <Typography variant={'h6'}>{icon}{text}</Typography>
+    )
+}
+
 export default function Code() {
     let linearStart = '#232526'
+
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     return (
         <>
             {smallScreen ?
                 <Box sx={{backgroundColor: linearStart}}>
-                    <NavBar textColor={'#dcdcdc'}/>
+                    <NavBar textColor={textColor}/>
                 </Box>
                 :
                 <Box sx={{backgroundColor: linearStart}}>
-                    <NavButton buttonColor={'#dcdcdc'}/>
+                    <NavButton buttonColor={textColor}/>
                 </Box>
             }
             <Box sx={{
                 background: `linear-gradient(to bottom, ${linearStart}, #414345 );`,
             }}>
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Languages</Typography></Divider>
-                <FaPython/>
-                <FaR/>
-                <JavascriptIcon/>
-                <FaCss3/>
-                <FaHtml5/>
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>FrontEnd</Typography></Divider>
-                <FaReact/>
-                <FaAngular/>
-                <FaNpm/>
-                <FaYarn/>
-                {/*Material Ui*/}
-                {/*SemanticCss*/}
 
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>BackEnd</Typography></Divider>
-                <FaNode/>
-                {/*Express*/}
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Database</Typography></Divider>
+                <DividerTitle text={'Languages'}/>
 
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Linux</Typography></Divider>
-                <FaLinux/>
-                {/*Debian*/}
-                {/*Tails*/}
-                {/*Ubuntu*/}
-                {/*Kali*/}
+                <TechName text={'Python'} icon={<FaPython color={textColor}/>}/>
+                <TechName text={'R Statistics'} icon={<FaR color={textColor}/>}/>
+                <TechName text={'JavaScript'} icon={<JavascriptIcon/>}/>
+                <TechName text={'Typescript'} icon={''}/>
+                <TechName text={'CSS'} icon={<FaCss3 color={textColor}/>}/>
+                <TechName text={'HTML'} icon={<FaHtml5 color={textColor}/>}/>
+
+                <DividerTitle text={'Front End'}/>
+                <TechName text={'React'} icon={<FaReact color={textColor}/>}/>
+                <TechName text={'Angular'} icon={<FaAngular color={textColor}/>}/>
+                <TechName text={'NPM'} icon={<FaNpm color={textColor}/>}/>
+                <TechName text={'Yarn'} icon={<FaYarn color={textColor}/>}/>
+                <TechName text={'Material Ui'} icon={''}/>
+                <TechName text={'Semantic Css'} icon={''}/>
+
+                <DividerTitle text={'Back End'}/>
+                <TechName text={'NodeJS'} icon={<FaNode color={textColor}/>}/>
+                <TechName text={'Express'} icon={''}/>
+
+                <DividerTitle text={'Databases'}/>
+                <TechName text={'MongoDB'} icon={''}/>
+                <TechName text={'PostGres'} icon={''}/>
+                <TechName text={'MySQL'} icon={''}/>
+
+                <DividerTitle text={'Operating Systems'}/>
+                <TechName text={'Linux'} icon={<FaLinux color={textColor}/>}/>
+                <TechName text={'Debian'} icon={''}/>
+                <TechName text={'Ubuntu'} icon={''}/>
+                <TechName text={'Tails'} icon={''}/>
+                <TechName text={'Kali'} icon={''}/>
             </Box>
         </>
     )
