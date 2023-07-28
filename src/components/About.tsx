@@ -1,8 +1,8 @@
 import React from 'react'
 import {Box, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
-import NavButton from "./NavButton";
-import NavBar from "./NavBar";
+import NavBar from "./nav/NavBar";
+import NavButton from "./nav/NavButton";
 
 let ImageTile = ({imageLocation}) => {
     return (

@@ -1,6 +1,6 @@
 import {Button, Grid, Link, Typography} from "@mui/material";
 import React from "react";
-import {navOptions} from "./home/HomePage";
+import {navOptions} from "../home/HomePage";
 
 export default function NavBar({textColor}) {
     return (

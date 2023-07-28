@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import {Box, keyframes, Typography, useMediaQuery} from "@mui/material";
 import './HomePage.css'
 import {darkTheme} from "../Theme";
-import NavButton from "../NavButton";
-import NavBar from "../NavBar";
+import NavBar from "../nav/NavBar";
+import NavButton from "../nav/NavButton";
 
 let image = require('../../static/background3.jpg')
 
