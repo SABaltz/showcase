@@ -21,8 +21,14 @@ export default function NavButton() {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+
             >
-                <MenuIcon sx={{color: '#ee7337'}}></MenuIcon>
+                <MenuIcon fontSize="small"
+                          sx={{
+                              color: '#ee7337',
+                              fontSize: '3rem',
+                              // backgroundColor: '#2b2d6a',
+                          }}></MenuIcon>
             </Button>
             <Menu
                 id="basic-menu"
@@ -32,6 +38,7 @@ export default function NavButton() {
                 MenuListProps={{
                     'aria-labelledby': 'basic-button',
                 }}
+
             >
                 {navOptions.map((option) => (
                     <MenuItem onClick={handleClose}>
