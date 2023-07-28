@@ -9,7 +9,11 @@ export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     return (
         <>
-            {smallScreen ? <NavBar/> : <NavButton/>}
+            {smallScreen ?
+                <Box sx={{backgroundColor: '#1f4037'}}>
+                    <NavBar textColor={'black'}/>
+                </Box>
+                : <NavButton/>}
 
             <Box sx={{
                 background: `linear-gradient(to bottom, #1f4037, #99f2c8 );`,

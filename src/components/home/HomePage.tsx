@@ -7,7 +7,7 @@ import NavBar from "../NavBar";
 
 let image = require('../../static/background3.jpg')
 
-export const navOptions = ['About', 'Work', 'Code'].reverse()
+export const navOptions = ['Home', 'About', 'Work', 'Code',].reverse()
 
 export default function HomePage() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
@@ -40,7 +40,7 @@ export default function HomePage() {
                 }}>
 
                 {smallScreen ?
-                    <NavBar/> :
+                    <NavBar textColor={'#ee7337'}/> :
                     <NavButton/>
                 }
 
