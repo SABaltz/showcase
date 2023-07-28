@@ -2,11 +2,11 @@ import {Button, Link, MenuItem, Typography} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import React, {useState} from "react";
+import {navOptions} from "./home/HomePage";
 
 export default function NavButton() {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-    let navOptions = ['About', 'Work', 'Code'].reverse()
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };

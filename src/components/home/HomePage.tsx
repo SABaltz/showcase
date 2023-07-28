@@ -5,25 +5,20 @@ import {darkTheme} from "../Theme";
 import NavButton from "../NavButton";
 
 let image = require('../../static/background3.jpg')
+
+export const navOptions = ['About', 'Work', 'Code'].reverse()
+
 export default function HomePage() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     const [animationPlayState, setAnimationPlayState] = useState(true);
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
 
-    let navOptions = ['About', 'Work', 'Code'].reverse()
+
     let rainbowAnimation = keyframes`
       to {
         background-position: 4500vh;
       }
     `;
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
 
     useEffect(() => {
         const interval = setInterval(() => setAnimationPlayState((prevState) => !prevState), 2000)
