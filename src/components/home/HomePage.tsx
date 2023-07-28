@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Box, Button, Grid, keyframes, Link, Typography, useMediaQuery} from "@mui/material";
+import {Box, keyframes, Typography, useMediaQuery} from "@mui/material";
 import './HomePage.css'
 import {darkTheme} from "../Theme";
 import NavButton from "../NavButton";
+import NavBar from "../NavBar";
 
 let image = require('../../static/background3.jpg')
 
@@ -39,27 +40,7 @@ export default function HomePage() {
                 }}>
 
                 {smallScreen ?
-                    <Grid container sx={{paddingTop: '.5rem'}}>
-                        <Grid item xs={9}>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Grid container direction="row-reverse">
-                                {navOptions.map((option, index) => {
-                                    return (
-                                        <Grid item xs={4} key={index}>
-                                            <Button>
-                                                <Link href={`/${option.toLowerCase()}`}>
-                                                    <Typography variant="h6" component="div"
-                                                                sx={{flexGrow: 1, color: '#ee7337'}}>
-                                                        {option}
-                                                    </Typography>
-                                                </Link>
-                                            </Button>
-                                        </Grid>)
-                                })}
-                            </Grid>
-                        </Grid>
-                    </Grid> :
+                    <NavBar/> :
                     <NavButton/>
                 }
 

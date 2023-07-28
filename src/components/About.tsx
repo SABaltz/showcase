@@ -2,13 +2,15 @@ import React, {Fragment} from 'react'
 import {Box, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 import NavButton from "./NavButton";
+import NavBar from "./NavBar";
 
 
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
     return (
         <>
-            <NavButton/>
+            {smallScreen ? <NavBar/> : <NavButton/>}
+
             <Box sx={{
                 background: `linear-gradient(to bottom, #1f4037, #99f2c8 );`,
             }}>
