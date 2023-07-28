@@ -3,7 +3,7 @@ import {Box, Divider, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
-import {FaAngular, FaNode, FaNpm, FaPython, FaReact} from "react-icons/fa";
+import {FaAngular, FaCss3, FaHtml5, FaLinux, FaNode, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
 import {FaR} from "react-icons/fa6";
 import JavascriptIcon from '@mui/icons-material/Javascript';
 
@@ -28,10 +28,13 @@ export default function Code() {
                 <FaPython/>
                 <FaR/>
                 <JavascriptIcon/>
+                <FaCss3/>
+                <FaHtml5/>
                 <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>FrontEnd</Typography></Divider>
                 <FaReact/>
                 <FaAngular/>
                 <FaNpm/>
+                <FaYarn/>
                 {/*Material Ui*/}
                 {/*SemanticCss*/}
 
@@ -39,9 +42,13 @@ export default function Code() {
                 <FaNode/>
                 {/*Express*/}
                 <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Database</Typography></Divider>
-                
+
                 <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Linux</Typography></Divider>
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Hardware</Typography></Divider>
+                <FaLinux/>
+                {/*Debian*/}
+                {/*Tails*/}
+                {/*Ubuntu*/}
+                {/*Kali*/}
             </Box>
         </>
     )
