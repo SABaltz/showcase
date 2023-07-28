@@ -27,7 +27,6 @@ export default function NavButton() {
                           sx={{
                               color: '#ee7337',
                               fontSize: '3rem',
-                              // backgroundColor: '#2b2d6a',
                           }}></MenuIcon>
             </Button>
             <Menu

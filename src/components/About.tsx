@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import {Box, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 import NavButton from "./NavButton";
@@ -7,11 +7,11 @@ import NavBar from "./NavBar";
 let ImageTile = ({imageLocation}) => {
     return (
         <>
-            <Grid item xs={4}
+            <Grid item xs={6} md={4}
                   sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '3rem'}}>
                 <Box
                     sx={{
-                        borderRadius: '5rem',
+                        // borderRadius: '5rem',
                         backgroundImage: 'url(' + imageLocation + ')',
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: 'center',
@@ -28,77 +28,73 @@ export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 
 
 export default function About() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
+
+    let linearStart = '#1f4037'
     return (
         <>
             {smallScreen ?
-                <Box sx={{backgroundColor: '#1f4037'}}>
+                <Box sx={{backgroundColor: linearStart}}>
                     <NavBar textColor={'black'}/>
                 </Box>
-                : <NavButton/>
+                :
+                <Box sx={{backgroundColor: linearStart}}>
+                    <NavButton/>
+                </Box>
             }
 
             <Box sx={{
-                background: `linear-gradient(to bottom, #1f4037, #99f2c8 );`,
+                background: `linear-gradient(to bottom, ${linearStart}, #99f2c8 );`,
             }}>
 
                 <Typography
                     sx={{padding: '2rem 2rem', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
-                    variant={'h1'}>About
-                    Me</Typography>
+                    variant={'h1'}>About</Typography>
 
                 <Grid container>
 
-                    <Fragment>
-                        <Grid item xs={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
-                            <Typography variant={'h6'}>Born and raised in Montana outside of Glacier National Park I
-                                spent
-                                my
-                                youth exploring
-                                the vast wilderness areas around my home.</Typography>
-                        </Grid>
+                    <Grid item xs={6} md={4} sx={{...centerGrid, paddingLeft: '1rem'}}>
+                        <Typography variant={'h6'}>Born and raised in Montana outside of Glacier National Park I
+                            spent
+                            my
+                            youth exploring
+                            the vast wilderness areas around my home.</Typography>
+                    </Grid>
 
-                        <ImageTile imageLocation={require('../static/HungryHorse.jpg')}/>
-                        <ImageTile imageLocation={require('../static/ManyGlacier.jpg')}/>
+                    <ImageTile imageLocation={require('../static/HungryHorse.jpg')}/>
+                    {smallScreen ? <ImageTile imageLocation={require('../static/ManyGlacier.jpg')}/> : <></>}
 
-                    </Fragment>
 
-                    <Fragment>
+                    <ImageTile imageLocation={require('../static/Rowing.jpg')}/>
 
-                        <ImageTile imageLocation={require('../static/Rowing.jpg')}/>
+                    <Grid item xs={6} md={4} sx={{...centerGrid}}>
+                        <Typography variant={'h6'}>I attended <Link href={'https://www.conncoll.edu/'}>Connecticut
+                            College</Link> in New London, CT and
+                            graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a
+                            member
+                            of
+                            the <Link href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
+                                Rowing</Link> team
+                            for
+                            four years, and served my final year as
+                            captain.</Typography>
+                    </Grid>
+                    {smallScreen ? <ImageTile imageLocation={require('../static/Rowing2.jpg')}/> : <></>}
 
-                        <Grid item xs={4} sx={{...centerGrid}}>
-                            <Typography variant={'h6'}>I attended <Link href={'https://www.conncoll.edu/'}>Connecticut
-                                College</Link> in New London, CT and
-                                graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a
-                                member
-                                of
-                                the <Link href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
-                                    Rowing</Link> team
-                                for
-                                four years, and served my final year as
-                                captain.</Typography>
-                        </Grid>
-                        <ImageTile imageLocation={require('../static/Rowing2.jpg')}/>
 
-                    </Fragment>
+                    {smallScreen ? <ImageTile imageLocation={require('../static/AK1.JPG')}/> : <></>}
+                    {smallScreen ? <ImageTile imageLocation={require('../static/AK2.jpg')}/> : <></>}
+                    <Grid item xs={6} md={4} sx={{...centerGrid, paddingRight: '1rem'}}>
+                        <Typography variant={'h6'}>These Days you can find me kayaking, climbing, and skiing in
+                            Anchorage,
+                            Alaska, where I currently reside.</Typography>
+                    </Grid>
+                    {!smallScreen ? <ImageTile imageLocation={require('../static/AK1.JPG')}/> : <></>}
 
-                    <Fragment>
-
-                        <ImageTile imageLocation={require('../static/AK1.JPG')}/>
-                        <ImageTile imageLocation={require('../static/AK2.jpg')}/>
-
-                        <Grid item xs={4} sx={{...centerGrid, paddingRight: '1rem'}}>
-                            <Typography variant={'h6'}>These Days you can find me kayaking, climbing, and skiing in
-                                Anchorage,
-                                Alaska, where I currently reside.</Typography>
-                        </Grid>
-
-                    </Fragment>
                 </Grid>
 
                 <Typography
                     sx={{margin: '2rem 2rem', ...centerGrid}}
-                    variant={'h1'}>My Travels</Typography>
+                    variant={'h1'}>Travels</Typography>
 
 
                 <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
@@ -121,8 +117,6 @@ export default function About() {
 
 
 const itemData = [
-
-
     {
         img: require('../static/glacier.jpg'),
         title: 'Glacier National Park',
