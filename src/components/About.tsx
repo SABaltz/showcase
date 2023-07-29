@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Divider, Grid, ImageList, ImageListItem, Link, Typography, useMediaQuery} from "@mui/material";
+import {Box, Divider, Grid, ImageList, ImageListItem, keyframes, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
@@ -34,6 +34,13 @@ let TextTile = ({text}) => {
     )
 }
 
+const zoomAnimation = keyframes`
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 'center'}
 
 export default function About() {
@@ -57,7 +64,13 @@ export default function About() {
             <Box sx={{
                 background: `linear-gradient(to bottom, ${linearStart}, #414345 );`,
             }}>
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>About</Typography></Divider>
+                <Divider sx={{fontSize: '5rem', paddingBottom: '2rem'}}>
+                    <Typography sx={{
+                        opacity: 0,
+                        transform: 'translateX(-100%)',
+                        animation: `${zoomAnimation} 1s forwards`
+                    }} variant={'h1'}>About</Typography>
+                </Divider>
 
                 <Grid container>
 
