@@ -115,7 +115,7 @@ export default function Code() {
                 </Grid>
 
 
-                <DividerWithTitle text={'Operating \n Systems'}/>
+                <DividerWithTitle text={smallScreen ? 'Operating Systems' : 'OS'}/>
                 <Grid container>
                     {operatingSystems.map(({text, icon, link}, index) => (
                         <Grid key={index} item xs={6} md={4}>
