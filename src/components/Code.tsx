@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Divider, Grid, Link, Typography, useMediaQuery} from "@mui/material";
-import {FaAngular, FaCss3, FaHtml5, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
+import {FaAngular, FaCss3, FaHtml5, FaNodeJs, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
@@ -52,7 +52,7 @@ const frontEndTechnologies = [
 ];
 
 const backEndTechnologies = [
-    {text: 'NodeJS', icon: <FaReact color={textColor}/>, link: 'https://nodejs.org/'},
+    {text: 'NodeJS', icon: <FaNodeJs color={textColor}/>, link: 'https://nodejs.org/'},
     {text: 'Express', icon: '', link: 'https://expressjs.com/'},
     {text: 'Flask', icon: '', link: 'https://flask.palletsprojects.com/en/2.3.x/'},
 ];
