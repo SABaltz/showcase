@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import {Box, Divider, Grid, ImageList, ImageListItem, keyframes, Link, Typography, useMediaQuery} from "@mui/material";
 import {darkTheme} from "./Theme";
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
+import {useIsVisible} from "react-is-visible"
 
 let ImageTile = ({imageLocation, smallScreen}) => {
     return (
@@ -44,6 +45,8 @@ const zoomAnimation = keyframes`
 export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 'center'}
 
 export default function About() {
+    const nodeRef = useRef();
+    const isVisible = useIsVisible(nodeRef);
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
 
     let linearStart = '#232526'
@@ -68,7 +71,7 @@ export default function About() {
                     <Typography sx={{
                         opacity: 0,
                         transform: 'translateX(-100%)',
-                        animation: `${zoomAnimation} 1s forwards`
+                        animation: `${zoomAnimation} 1.5s forwards`
                     }} variant={'h1'}>About</Typography>
                 </Divider>
 
@@ -86,7 +89,8 @@ export default function About() {
                     {/*--------------------------Row 2---------------------------------*/}
 
                     {smallScreen ?
-                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
+                        <ImageTile smallScreen={smallScreen}
+                                   imageLocation={require('../static/Rowing.jpg')}/> : <></>}
 
                     <Grid item xs={12} md={4} sx={{...centerGrid}}>
                         <Typography variant={'h6'}>I attended <Link sx={{color: '#919191'}}
@@ -95,7 +99,8 @@ export default function About() {
                             graduated with a Bachelors in Economics, Finance, and Applied Statistics. I was a
                             member
                             of
-                            the <Link sx={{color: '#919191'}} href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
+                            the <Link sx={{color: '#919191'}}
+                                      href={'https://camelathletics.com/sports/mens-rowing'}>Varsity
                                 Rowing</Link> team
                             for
                             four years, and served my final year as
@@ -104,10 +109,12 @@ export default function About() {
 
 
                     {!smallScreen ?
-                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing.jpg')}/> : <></>}
+                        <ImageTile smallScreen={smallScreen}
+                                   imageLocation={require('../static/Rowing.jpg')}/> : <></>}
 
                     {smallScreen ?
-                        <ImageTile smallScreen={smallScreen} imageLocation={require('../static/Rowing2.jpg')}/> : <></>}
+                        <ImageTile smallScreen={smallScreen}
+                                   imageLocation={require('../static/Rowing2.jpg')}/> : <></>}
 
                     {/*--------------------------Row 3---------------------------------*/}
                     {smallScreen ?
@@ -125,7 +132,15 @@ export default function About() {
                 {/*--------------------------Travels---------------------------------*/}
 
 
-                <Divider sx={{fontSize: '5rem'}}><Typography variant={'h1'}>Travels</Typography></Divider>
+                <Divider ref={nodeRef} sx={{fontSize: '5rem'}}>
+                    <Typography sx={{
+                        opacity: 0,
+                        transform: 'translateX(-100%)',
+                        animation: `${isVisible ? zoomAnimation : ''} 1.5s forwards`
+                    }} variant={'h1'}>
+                        Travels
+                    </Typography>
+                </Divider>
 
                 <ImageList sx={{marginTop: '3rem', width: '100vw', height: '100vh'}} cols={smallScreen ? 3 : 1}
                            rowHeight={900}>
