@@ -82,24 +82,41 @@ export default function Code() {
                 </Grid>
 
                 <DividerWithTitle text={'Front End'}/>
-                {frontEndTechnologies.map(({text, icon}, index) => (
-                    <TechItem key={index} text={text} icon={icon}/>
-                ))}
+                <Grid container>
+                    {frontEndTechnologies.map(({text, icon}, index) => (
+                        <Grid key={index} item xs={6} md={4}>
+                            <TechItem key={index} text={text} icon={icon}/>
+                        </Grid>
+                    ))}
+                </Grid>
 
                 <DividerWithTitle text={'Back End'}/>
-                {backEndTechnologies.map(({text, icon}, index) => (
-                    <TechItem key={index} text={text} icon={icon}/>
-                ))}
+                <Grid container>
+                    {backEndTechnologies.map(({text, icon}, index) => (
+                        <Grid key={index} item xs={6} md={4}>
+                            <TechItem key={index} text={text} icon={icon}/>
+                        </Grid>
+                    ))}
+                </Grid>
 
                 <DividerWithTitle text={'Databases'}/>
-                {databaseTechnologies.map(({text, icon}, index) => (
-                    <TechItem key={index} text={text} icon={icon}/>
-                ))}
+                <Grid container>
+                    {databaseTechnologies.map(({text, icon}, index) => (
+                        <Grid key={index} item xs={6} md={4}>
+                            <TechItem key={index} text={text} icon={icon}/>
+                        </Grid>
+                    ))}
+                </Grid>
+
 
                 <DividerWithTitle text={'Operating Systems'}/>
-                {operatingSystems.map(({text, icon}, index) => (
-                    <TechItem key={index} text={text} icon={icon}/>
-                ))}
+                <Grid container>
+                    {operatingSystems.map(({text, icon}, index) => (
+                        <Grid key={index} item xs={6} md={4}>
+                            <TechItem key={index} text={text} icon={icon}/>
+                        </Grid>
+                    ))}
+                </Grid>
             </Box>
         </>
     );
