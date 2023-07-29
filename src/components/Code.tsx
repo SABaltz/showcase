@@ -21,7 +21,7 @@ const DividerWithTitle = ({text}) => {
 const TechItem = ({text, icon, href}) => {
     return (
         <Link href={href} target="_blank" rel="noopener noreferrer">
-            <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem'}}>
+            <Typography variant="h4" sx={{...centerGrid, padding: '1.5rem 1.5rem'}}>
                 {icon}&nbsp;&nbsp;&nbsp;{text}
             </Typography>
         </Link>
@@ -31,7 +31,11 @@ const TechItem = ({text, icon, href}) => {
 const technologies = [
     {text: 'Python', icon: <FaPython color={textColor}/>, link: 'https://www.python.org/'},
     {text: 'R Statistics', icon: '', link: 'https://www.r-project.org/'},
-    {text: 'JavaScript', icon: <JavascriptIcon/>, link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'},
+    {
+        text: 'JavaScript',
+        icon: <JavascriptIcon sx={{fontSize: '4rem'}}/>,
+        link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+    },
     {text: 'Typescript', icon: '', link: 'https://www.typescriptlang.org/'},
     {text: 'CSS', icon: <FaCss3 color={textColor}/>, link: 'https://www.w3.org/Style/CSS/'},
     {text: 'HTML', icon: <FaHtml5 color={textColor}/>, link: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
