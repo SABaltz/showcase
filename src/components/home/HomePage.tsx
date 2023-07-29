@@ -4,6 +4,7 @@ import {darkTheme} from "../Theme";
 import NavBar from "../nav/NavBar";
 import NavButton from "../nav/NavButton";
 import background3 from "../../static/background3.jpg";
+import './HomePage.css'
 
 const rainbowAnimation = keyframes`
   to {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Divider, Grid, Link, Typography, useMediaQuery} from "@mui/material";
-import {FaAngular, FaCss3, FaHtml5, FaLinux, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
+import {FaAngular, FaCss3, FaHtml5, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
@@ -21,7 +21,7 @@ const DividerWithTitle = ({text}) => {
 const TechItem = ({text, icon, href}) => {
     return (
         <Link href={href} target="_blank" rel="noopener noreferrer">
-            <Typography variant="h4" sx={{...centerGrid, padding: '1.5rem 1.5rem'}}>
+            <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem'}}>
                 {icon}&nbsp;&nbsp;&nbsp;{text}
             </Typography>
         </Link>
@@ -33,13 +33,13 @@ const technologies = [
     {text: 'R Statistics', icon: '', link: 'https://www.r-project.org/'},
     {
         text: 'JavaScript',
-        icon: <JavascriptIcon sx={{fontSize: '4rem'}}/>,
+        icon: <JavascriptIcon sx={{fontSize: '2.5rem'}}/>,
         link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
     },
     {text: 'Typescript', icon: '', link: 'https://www.typescriptlang.org/'},
     {text: 'CSS', icon: <FaCss3 color={textColor}/>, link: 'https://www.w3.org/Style/CSS/'},
     {text: 'HTML', icon: <FaHtml5 color={textColor}/>, link: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
-    {text: 'Bash', icon: '', link: 'https://www.gnu.org/software/bash/'},
+    // {text: 'Bash', icon: '', link: 'https://www.gnu.org/software/bash/'},
 ];
 
 const frontEndTechnologies = [
@@ -54,6 +54,7 @@ const frontEndTechnologies = [
 const backEndTechnologies = [
     {text: 'NodeJS', icon: <FaReact color={textColor}/>, link: 'https://nodejs.org/'},
     {text: 'Express', icon: '', link: 'https://expressjs.com/'},
+    {text: 'Flask', icon: '', link: 'https://flask.palletsprojects.com/en/2.3.x/'},
 ];
 
 const databaseTechnologies = [
@@ -63,8 +64,6 @@ const databaseTechnologies = [
 ];
 
 const operatingSystems = [
-    {text: 'Linux', icon: <FaLinux color={textColor}/>, link: 'https://www.linux.org/'},
-    {text: 'Debian', icon: '', link: 'https://www.debian.org/'},
     {text: 'Ubuntu', icon: '', link: 'https://ubuntu.com/'},
     {text: 'Tails', icon: '', link: 'https://tails.boum.org/'},
     {text: 'Kali Linux', icon: '', link: 'https://www.kali.org/'},
