@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Divider, Grid, Typography, useMediaQuery} from "@mui/material";
+import {Box, Divider, Grid, Link, Typography, useMediaQuery} from "@mui/material";
 import {FaAngular, FaCss3, FaHtml5, FaLinux, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import NavBar from "./nav/NavBar";
@@ -18,50 +18,52 @@ const DividerWithTitle = ({text}) => {
     );
 };
 
-const TechItem = ({text, icon}) => {
+const TechItem = ({text, icon, href}) => {
     return (
-        <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem '}}>
-            {icon}&nbsp;&nbsp;&nbsp;{text}
-        </Typography>
+        <Link href={href}>
+            <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem '}}>
+                {icon}&nbsp;&nbsp;&nbsp;{text}
+            </Typography>
+        </Link>
     );
 };
 
 const technologies = [
-    {text: 'Python', icon: <FaPython color={textColor}/>},
-    {text: 'R Statistics', icon: ''},
-    {text: 'JavaScript', icon: <JavascriptIcon/>},
-    {text: 'Typescript', icon: ''},
-    {text: 'CSS', icon: <FaCss3 color={textColor}/>},
-    {text: 'HTML', icon: <FaHtml5 color={textColor}/>},
-    {text: 'Bash', icon: ''},
+    {text: 'Python', icon: <FaPython color={textColor}/>, link: 'https://www.python.org/'},
+    {text: 'R Statistics', icon: '', link: 'https://www.r-project.org/'},
+    {text: 'JavaScript', icon: <JavascriptIcon/>, link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'},
+    {text: 'Typescript', icon: '', link: 'https://www.typescriptlang.org/'},
+    {text: 'CSS', icon: <FaCss3 color={textColor}/>, link: 'https://www.w3.org/Style/CSS/'},
+    {text: 'HTML', icon: <FaHtml5 color={textColor}/>, link: 'https://developer.mozilla.org/en-US/docs/Web/HTML'},
+    {text: 'Bash', icon: '', link: 'https://www.gnu.org/software/bash/'},
 ];
 
 const frontEndTechnologies = [
-    {text: 'React', icon: <FaReact color={textColor}/>},
-    {text: 'Angular', icon: <FaAngular color={textColor}/>},
-    {text: 'NPM', icon: <FaNpm color={textColor}/>},
-    {text: 'Yarn', icon: <FaYarn color={textColor}/>},
-    {text: 'Material Ui', icon: ''},
-    {text: 'Semantic Css', icon: ''},
+    {text: 'React', icon: <FaReact color={textColor}/>, link: 'https://reactjs.org/'},
+    {text: 'Angular', icon: <FaAngular color={textColor}/>, link: 'https://angular.io/'},
+    {text: 'NPM', icon: <FaNpm color={textColor}/>, link: 'https://www.npmjs.com/'},
+    {text: 'Yarn', icon: <FaYarn color={textColor}/>, link: 'https://yarnpkg.com/'},
+    {text: 'Material Ui', icon: '', link: 'https://material-ui.com/'},
+    {text: 'Semantic Ui', icon: '', link: 'https://semantic-ui.com/'},
 ];
 
 const backEndTechnologies = [
-    {text: 'NodeJS', icon: <FaReact color={textColor}/>},
-    {text: 'Express', icon: ''},
+    {text: 'NodeJS', icon: <FaReact color={textColor}/>, link: 'https://nodejs.org/'},
+    {text: 'Express', icon: '', link: 'https://expressjs.com/'},
 ];
 
 const databaseTechnologies = [
-    {text: 'MongoDB', icon: ''},
-    {text: 'PostgreSQL', icon: ''},
-    {text: 'MySQL', icon: ''},
+    {text: 'MongoDB', icon: '', link: 'https://www.mongodb.com/'},
+    {text: 'PostgreSQL', icon: '', link: 'https://www.postgresql.org/'},
+    {text: 'MySQL', icon: '', link: 'https://www.mysql.com/'},
 ];
 
 const operatingSystems = [
-    {text: 'Linux', icon: <FaLinux color={textColor}/>},
-    {text: 'Debian', icon: ''},
-    {text: 'Ubuntu', icon: ''},
-    {text: 'Tails', icon: ''},
-    {text: 'Kali', icon: ''},
+    {text: 'Linux', icon: <FaLinux color={textColor}/>, link: 'https://www.linux.org/'},
+    {text: 'Debian', icon: '', link: 'https://www.debian.org/'},
+    {text: 'Ubuntu', icon: '', link: 'https://ubuntu.com/'},
+    {text: 'Tails', icon: '', link: 'https://tails.boum.org/'},
+    {text: 'Kali Linux', icon: '', link: 'https://www.kali.org/'},
 ];
 
 export default function Code() {
@@ -75,36 +77,36 @@ export default function Code() {
             <Box sx={{background: `linear-gradient(to bottom, ${linearStart}, #414345 );`}}>
                 <DividerWithTitle text={'Languages'}/>
                 <Grid container>
-                    {technologies.map(({text, icon}, index) => (
+                    {technologies.map(({text, icon, link}, index) => (
                         <Grid key={index} item xs={6} md={4}>
-                            <TechItem text={text} icon={icon}/>
+                            <TechItem text={text} icon={icon} href={link}/>
                         </Grid>
                     ))}
                 </Grid>
 
                 <DividerWithTitle text={'Front End'}/>
                 <Grid container>
-                    {frontEndTechnologies.map(({text, icon}, index) => (
+                    {frontEndTechnologies.map(({text, icon, link}, index) => (
                         <Grid key={index} item xs={6} md={4}>
-                            <TechItem key={index} text={text} icon={icon}/>
+                            <TechItem key={index} text={text} icon={icon} href={link}/>
                         </Grid>
                     ))}
                 </Grid>
 
                 <DividerWithTitle text={'Back End'}/>
                 <Grid container>
-                    {backEndTechnologies.map(({text, icon}, index) => (
+                    {backEndTechnologies.map(({text, icon, link}, index) => (
                         <Grid key={index} item xs={6} md={4}>
-                            <TechItem key={index} text={text} icon={icon}/>
+                            <TechItem key={index} text={text} icon={icon} href={link}/>
                         </Grid>
                     ))}
                 </Grid>
 
                 <DividerWithTitle text={'Databases'}/>
                 <Grid container>
-                    {databaseTechnologies.map(({text, icon}, index) => (
+                    {databaseTechnologies.map(({text, icon, link}, index) => (
                         <Grid key={index} item xs={6} md={4}>
-                            <TechItem key={index} text={text} icon={icon}/>
+                            <TechItem key={index} text={text} icon={icon} href={link}/>
                         </Grid>
                     ))}
                 </Grid>
@@ -112,9 +114,9 @@ export default function Code() {
 
                 <DividerWithTitle text={'Operating Systems'}/>
                 <Grid container>
-                    {operatingSystems.map(({text, icon}, index) => (
+                    {operatingSystems.map(({text, icon, link}, index) => (
                         <Grid key={index} item xs={6} md={4}>
-                            <TechItem key={index} text={text} icon={icon}/>
+                            <TechItem key={index} text={text} icon={icon} href={link}/>
                         </Grid>
                     ))}
                 </Grid>
