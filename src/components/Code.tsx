@@ -5,6 +5,7 @@ import JavascriptIcon from '@mui/icons-material/Javascript';
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
 import {darkTheme} from "./Theme";
+import {centerGrid} from "./About";
 
 const textColor = '#dcdcdc';
 const linearStart = '#232526';
@@ -19,7 +20,7 @@ const DividerWithTitle = ({text}) => {
 
 const TechItem = ({text, icon}) => {
     return (
-        <Typography variant="h6">
+        <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem '}}>
             {icon}&nbsp;&nbsp;&nbsp;{text}
         </Typography>
     );
@@ -27,7 +28,7 @@ const TechItem = ({text, icon}) => {
 
 const technologies = [
     {text: 'Python', icon: <FaPython color={textColor}/>},
-    {text: 'R Statistics', icon: <FaReact color={textColor}/>},
+    {text: 'R Statistics', icon: ''},
     {text: 'JavaScript', icon: <JavascriptIcon/>},
     {text: 'Typescript', icon: ''},
     {text: 'CSS', icon: <FaCss3 color={textColor}/>},
@@ -51,7 +52,7 @@ const backEndTechnologies = [
 
 const databaseTechnologies = [
     {text: 'MongoDB', icon: ''},
-    {text: 'PostGres', icon: ''},
+    {text: 'PostgreSQL', icon: ''},
     {text: 'MySQL', icon: ''},
 ];
 
