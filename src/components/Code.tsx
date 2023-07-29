@@ -20,8 +20,8 @@ const DividerWithTitle = ({text}) => {
 
 const TechItem = ({text, icon, href}) => {
     return (
-        <Link href={href}>
-            <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem '}}>
+        <Link href={href} target="_blank" rel="noopener noreferrer">
+            <Typography variant="h6" sx={{...centerGrid, padding: '1.5rem 1.5rem'}}>
                 {icon}&nbsp;&nbsp;&nbsp;{text}
             </Typography>
         </Link>
