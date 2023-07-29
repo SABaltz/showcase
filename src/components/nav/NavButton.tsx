@@ -2,7 +2,7 @@ import {Button, Link, MenuItem, Typography} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import React, {useState} from "react";
-import {navOptions} from "../home/HomePage";
+import {navOptionsButton} from "../home/HomePage";
 
 export default function NavButton({buttonColor}) {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -25,7 +25,6 @@ export default function NavButton({buttonColor}) {
             >
                 <MenuIcon fontSize="small"
                           sx={{
-                              // color: '#ee7337',
                               color: buttonColor,
                               fontSize: '3rem',
                           }}></MenuIcon>
@@ -40,7 +39,7 @@ export default function NavButton({buttonColor}) {
                 }}
 
             >
-                {navOptions.map((option) => (
+                {navOptionsButton.map((option) => (
                     <MenuItem onClick={handleClose}>
                         <Link href={`/${option.toLowerCase()}`}>
                             <Typography variant="h6" component="div"

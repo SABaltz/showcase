@@ -26,6 +26,7 @@ const useRainbowAnimation = (interval) => {
 };
 
 export const navOptions = ['Home', 'About', 'Code'].reverse();
+export const navOptionsButton = ['Home', 'About', 'Code'];
 
 export default function HomePage() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
