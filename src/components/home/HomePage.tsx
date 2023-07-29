@@ -1,49 +1,48 @@
 import React, {useEffect, useState} from "react";
 import {Box, keyframes, Typography, useMediaQuery} from "@mui/material";
-import './HomePage.css'
 import {darkTheme} from "../Theme";
 import NavBar from "../nav/NavBar";
 import NavButton from "../nav/NavButton";
+import background3 from "../../static/background3.jpg";
 
-let image = require('../../static/background3.jpg')
+const rainbowAnimation = keyframes`
+  to {
+    background-position: 4500vh;
+  }
+`;
 
-export const navOptions = ['Home', 'About', 'Code',].reverse()
+const useRainbowAnimation = (interval) => {
+    const [animationPlayState, setAnimationPlayState] = useState(true);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setAnimationPlayState((prevState) => !prevState);
+        }, interval);
+        return () => clearInterval(intervalId);
+    }, [interval]);
+
+    return animationPlayState;
+};
+
+export const navOptions = ['Home', 'About', 'Code'].reverse();
 
 export default function HomePage() {
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
-    const [animationPlayState, setAnimationPlayState] = useState(true);
-
-
-    let rainbowAnimation = keyframes`
-      to {
-        background-position: 4500vh;
-      }
-    `;
-
-
-    useEffect(() => {
-        const interval = setInterval(() => setAnimationPlayState((prevState) => !prevState), 2000)
-        return () => clearInterval(interval);
-    }, []);
-
+    const animationPlayState = useRainbowAnimation(smallScreen ? 2000 : 2200);
 
     return (
         <>
             <Box
                 sx={{
-                    backgroundImage: 'url(' + image + ')',
+                    backgroundImage: `url(${background3})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     width: '100vw',
                     height: '100vh'
-                }}>
-
-                {smallScreen ?
-                    <NavBar textColor={'#ee7337'}/> :
-                    <NavButton buttonColor={'#ee7337'}/>
-                }
-
+                }}
+            >
+                {smallScreen ? <NavBar textColor="#ee7337"/> : <NavButton buttonColor="#ee7337"/>}
 
                 <Typography
                     variant="h1"
@@ -62,5 +61,5 @@ export default function HomePage() {
                 </Typography>
             </Box>
         </>
-    )
+    );
 }
