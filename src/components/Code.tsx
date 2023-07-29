@@ -1,79 +1,106 @@
-import React from 'react'
-import {Box, Divider, Typography, useMediaQuery} from "@mui/material";
-import {darkTheme} from "./Theme";
+import React from 'react';
+import {Box, Divider, Grid, Typography, useMediaQuery} from "@mui/material";
+import {FaAngular, FaCss3, FaHtml5, FaLinux, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
+import JavascriptIcon from '@mui/icons-material/Javascript';
 import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
-import {FaAngular, FaCss3, FaHtml5, FaLinux, FaNode, FaNpm, FaPython, FaReact, FaYarn} from "react-icons/fa";
-import {FaR} from "react-icons/fa6";
-import JavascriptIcon from '@mui/icons-material/Javascript';
+import {darkTheme} from "./Theme";
 
+const textColor = '#dcdcdc';
+const linearStart = '#232526';
 
-let textColor = '#dcdcdc'
-
-let DividerTitle = ({text}) => {
+const DividerWithTitle = ({text}) => {
     return (
-        <Divider><Typography variant={'h1'}>{text}</Typography></Divider>
-    )
-}
+        <Divider>
+            <Typography variant="h2">{text}</Typography>
+        </Divider>
+    );
+};
 
-let TechName = ({text, icon}) => {
+const TechItem = ({text, icon}) => {
     return (
-        <Typography variant={'h6'}>{icon}{text}</Typography>
-    )
-}
+        <Typography variant="h6">
+            {icon}&nbsp;&nbsp;&nbsp;{text}
+        </Typography>
+    );
+};
+
+const technologies = [
+    {text: 'Python', icon: <FaPython color={textColor}/>},
+    {text: 'R Statistics', icon: <FaReact color={textColor}/>},
+    {text: 'JavaScript', icon: <JavascriptIcon/>},
+    {text: 'Typescript', icon: ''},
+    {text: 'CSS', icon: <FaCss3 color={textColor}/>},
+    {text: 'HTML', icon: <FaHtml5 color={textColor}/>},
+    {text: 'Bash', icon: ''},
+];
+
+const frontEndTechnologies = [
+    {text: 'React', icon: <FaReact color={textColor}/>},
+    {text: 'Angular', icon: <FaAngular color={textColor}/>},
+    {text: 'NPM', icon: <FaNpm color={textColor}/>},
+    {text: 'Yarn', icon: <FaYarn color={textColor}/>},
+    {text: 'Material Ui', icon: ''},
+    {text: 'Semantic Css', icon: ''},
+];
+
+const backEndTechnologies = [
+    {text: 'NodeJS', icon: <FaReact color={textColor}/>},
+    {text: 'Express', icon: ''},
+];
+
+const databaseTechnologies = [
+    {text: 'MongoDB', icon: ''},
+    {text: 'PostGres', icon: ''},
+    {text: 'MySQL', icon: ''},
+];
+
+const operatingSystems = [
+    {text: 'Linux', icon: <FaLinux color={textColor}/>},
+    {text: 'Debian', icon: ''},
+    {text: 'Ubuntu', icon: ''},
+    {text: 'Tails', icon: ''},
+    {text: 'Kali', icon: ''},
+];
 
 export default function Code() {
-    let linearStart = '#232526'
-
     const smallScreen = useMediaQuery(darkTheme.breakpoints.up('sm'));
+
     return (
         <>
-            {smallScreen ?
-                <Box sx={{backgroundColor: linearStart}}>
-                    <NavBar textColor={textColor}/>
-                </Box>
-                :
-                <Box sx={{backgroundColor: linearStart}}>
-                    <NavButton buttonColor={textColor}/>
-                </Box>
-            }
-            <Box sx={{
-                background: `linear-gradient(to bottom, ${linearStart}, #414345 );`,
-            }}>
+            <Box sx={{backgroundColor: linearStart}}>
+                {smallScreen ? <NavBar textColor={textColor}/> : <NavButton buttonColor={textColor}/>}
+            </Box>
+            <Box sx={{background: `linear-gradient(to bottom, ${linearStart}, #414345 );`}}>
+                <DividerWithTitle text={'Languages'}/>
+                <Grid container>
+                    {technologies.map(({text, icon}, index) => (
+                        <Grid key={index} item xs={6} md={4}>
+                            <TechItem text={text} icon={icon}/>
+                        </Grid>
+                    ))}
+                </Grid>
 
-                <DividerTitle text={'Languages'}/>
+                <DividerWithTitle text={'Front End'}/>
+                {frontEndTechnologies.map(({text, icon}, index) => (
+                    <TechItem key={index} text={text} icon={icon}/>
+                ))}
 
-                <TechName text={'Python'} icon={<FaPython color={textColor}/>}/>
-                <TechName text={'R Statistics'} icon={<FaR color={textColor}/>}/>
-                <TechName text={'JavaScript'} icon={<JavascriptIcon/>}/>
-                <TechName text={'Typescript'} icon={''}/>
-                <TechName text={'CSS'} icon={<FaCss3 color={textColor}/>}/>
-                <TechName text={'HTML'} icon={<FaHtml5 color={textColor}/>}/>
+                <DividerWithTitle text={'Back End'}/>
+                {backEndTechnologies.map(({text, icon}, index) => (
+                    <TechItem key={index} text={text} icon={icon}/>
+                ))}
 
-                <DividerTitle text={'Front End'}/>
-                <TechName text={'React'} icon={<FaReact color={textColor}/>}/>
-                <TechName text={'Angular'} icon={<FaAngular color={textColor}/>}/>
-                <TechName text={'NPM'} icon={<FaNpm color={textColor}/>}/>
-                <TechName text={'Yarn'} icon={<FaYarn color={textColor}/>}/>
-                <TechName text={'Material Ui'} icon={''}/>
-                <TechName text={'Semantic Css'} icon={''}/>
+                <DividerWithTitle text={'Databases'}/>
+                {databaseTechnologies.map(({text, icon}, index) => (
+                    <TechItem key={index} text={text} icon={icon}/>
+                ))}
 
-                <DividerTitle text={'Back End'}/>
-                <TechName text={'NodeJS'} icon={<FaNode color={textColor}/>}/>
-                <TechName text={'Express'} icon={''}/>
-
-                <DividerTitle text={'Databases'}/>
-                <TechName text={'MongoDB'} icon={''}/>
-                <TechName text={'PostGres'} icon={''}/>
-                <TechName text={'MySQL'} icon={''}/>
-
-                <DividerTitle text={'Operating Systems'}/>
-                <TechName text={'Linux'} icon={<FaLinux color={textColor}/>}/>
-                <TechName text={'Debian'} icon={''}/>
-                <TechName text={'Ubuntu'} icon={''}/>
-                <TechName text={'Tails'} icon={''}/>
-                <TechName text={'Kali'} icon={''}/>
+                <DividerWithTitle text={'Operating Systems'}/>
+                {operatingSystems.map(({text, icon}, index) => (
+                    <TechItem key={index} text={text} icon={icon}/>
+                ))}
             </Box>
         </>
-    )
+    );
 }
