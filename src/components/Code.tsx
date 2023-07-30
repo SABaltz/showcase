@@ -6,6 +6,7 @@ import NavBar from "./nav/NavBar";
 import NavButton from "./nav/NavButton";
 import {darkTheme} from "./Theme";
 import {centerGrid} from "./About";
+import GlitchText from 'react-glitch-effect/core/GlitchText';
 
 const textColor = '#dcdcdc';
 const linearStart = '#232526';
@@ -13,7 +14,9 @@ const linearStart = '#232526';
 const DividerWithTitle = ({text}) => {
     return (
         <Divider>
-            <Typography variant="h2">{text}</Typography>
+            <GlitchText component='h1' disabled={false}>
+                <Typography variant="h2">{text}</Typography>
+            </GlitchText>
         </Divider>
     );
 };
