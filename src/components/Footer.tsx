@@ -46,6 +46,16 @@ export default function Footer() {
                             <FaNpm/>
                         </Link>
                     </Grid>
+                    <Grid item xs={12} md={12}>
+                        <Typography sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            paddingTop: '3rem'
+                        }}>If you are looking for the computational social scientist Samuel Baltz
+                            try: <Link href={'https://samuelbaltz.net'}
+                                       sx={{color: 'white', paddingLeft: '1rem'}}> samuelbaltz.net</Link></Typography>
+                    </Grid>
                 </Grid>
             </Toolbar>
         </AppBar>
