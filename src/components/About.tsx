@@ -36,10 +36,10 @@ let TextTile = ({text}) => {
 }
 
 const zoomAnimation = keyframes`
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 `;
 
 export let centerGrid = {display: 'flex', justifyContent: 'center', alignItems: 'center'}
@@ -182,11 +182,6 @@ const itemData = [
         img: require('../static/FisherHike.JPG'),
         title: 'Fisher Towers',
     },
-    {
-        img: require('../static/FisherTowers.jpg'),
-        title: 'Fisher Towers',
-    },
-
     {
         img: require('../static/arches.JPG'),
         title: 'Arches National Park ',
